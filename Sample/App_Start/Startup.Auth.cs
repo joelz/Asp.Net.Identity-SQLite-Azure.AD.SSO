@@ -47,9 +47,12 @@ namespace Sample
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(new Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticationOptions()
+            {
+                ClientId = "76d4df1a-da09-482e-a9fb-c531c3ee79d8",
+                ClientSecret = "",
+                // Scope = { "openid", "email" }, // scope 不能加！！
+            });
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
