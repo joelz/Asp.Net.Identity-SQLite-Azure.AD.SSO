@@ -22,7 +22,10 @@ password: Abc@123456
 
 
 ## 方法二：用通用型的Microsoft.Owin.Security.OpenIdConnect 
-1. TODO
+1. 安装Microsoft.Owin.Security.OpenIdConnect（会引入一些依赖）
+2. 测试发现Azure AD 中的callback url写成https://{domain}/signin-oidc 没什么用，去到Account/ExternalLoginCallback 里面loginInfo都是空的
+3. 用例子AppModelv2-WebApp-OpenIDConnect-DotNet-master中的取user信息的方法可以取到值
+4. 尽管重复`app.UseCookieAuthentication(new CookieAuthenticationOptions());`，但似乎没什么影响
 
 ## links
 * [Quickstart: Add sign-in with Microsoft to an ASP.NET web app - Microsoft identity platform | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-aspnet-webapp#how-the-sample-works)
