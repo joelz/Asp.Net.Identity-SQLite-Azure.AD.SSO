@@ -16,6 +16,10 @@ password: Abc@123456
 
 问题：signin-microsoft请求的处理的时间特别长，有40多秒，为什么？
 
+因为Microsoft.ApplicationInsights。看这里：https://stackoverflow.com/questions/62628937/net-core-3-1-identity-takes-too-long-to-login-on-azure 
+
+如何移除？运行`UnInstall-Package Microsoft.ApplicationInsights.Web -RemoveDependencies`。看这里。https://stackoverflow.com/a/43096519
+
 
 ## 方法二：用通用型的Microsoft.Owin.Security.OpenIdConnect 
 1. TODO
